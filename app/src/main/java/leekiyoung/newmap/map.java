@@ -8,6 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class map extends AppCompatActivity{
 
@@ -37,7 +42,6 @@ public class map extends AppCompatActivity{
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("");
 
-
     }
 
     @Override
@@ -61,7 +65,9 @@ public class map extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-
+    public void onButton1Clicked(View v){
+        mapsActivity.addMarker();
+    }
 
 
 
