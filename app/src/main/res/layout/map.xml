@@ -20,14 +20,18 @@
             <fragment
                 android:id="@+id/mapfragment"
                 android:name="leekiyoung.newmap.MapsActivity"
-                android:layout_width="316dp"
-                android:layout_height="312dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="48dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.7"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.9" />
 
             <TextView
                 android:id="@+id/textView"
@@ -50,13 +54,14 @@
                 android:layout_marginStart="20dp"
                 android:text="Button"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                android:onClick="onButton1Clicked"/>
 
 
         </android.support.constraint.ConstraintLayout>
 
 
-        <android.support.design.widget.NavigationView
+        <!--<android.support.design.widget.NavigationView
             android:layout_height="match_parent"
             android:layout_width="250dp"
             android:fitsSystemWindows="true"
@@ -66,7 +71,7 @@
 
             >
 
-        </android.support.design.widget.NavigationView>
+        </android.support.design.widget.NavigationView>-->
 
     </android.support.v4.widget.DrawerLayout>
 

@@ -24,7 +24,6 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.activity_maps,container,false);
-
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         return rootView;
@@ -35,11 +34,20 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //LatLng seoul= new LatLng(37.49,127);
+        //mMap.addMarker(new MarkerOptions().position(seoul).title("서울"));
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
+    public GoogleMap getmMap(){
+        return mMap;
+    }
 
+    public void addMarker(){
+        LatLng sydney = new LatLng(37.49, 127);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("addMarker"));
+    }
 
 }
