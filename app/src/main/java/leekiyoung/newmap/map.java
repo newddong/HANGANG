@@ -1,6 +1,9 @@
 package leekiyoung.newmap;
 
+import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -10,16 +13,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 public class map extends AppCompatActivity{
 
 
     MapsActivity mapsActivity;
     DrawerLayout drawerLayout;
     ActionBar actionBar;
+
 
 
 
@@ -32,9 +32,11 @@ public class map extends AppCompatActivity{
 
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         mapsActivity = new MapsActivity();
+
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.add(R.id.mapfragment, mapsActivity);
         fragmentTransaction.commit();
+
 
         actionBar = getSupportActionBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout) ;
@@ -49,6 +51,7 @@ public class map extends AppCompatActivity{
         getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 
 
     @Override
@@ -68,7 +71,6 @@ public class map extends AppCompatActivity{
     public void onButton1Clicked(View v){
         mapsActivity.addMarker();
     }
-
 
 
 }
