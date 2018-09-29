@@ -69,8 +69,10 @@ public class map extends AppCompatActivity{
     }
 
     public void onButton1Clicked(View v){
-        mapsActivity.addMarker();
+        mapsActivity.addMarker("편의점");
     }
-
+    public void onButton2Clicked(View v){
+        mapsActivity.addMarker("화장실");
+    }
 
 }
