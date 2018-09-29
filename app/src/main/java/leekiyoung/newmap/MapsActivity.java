@@ -131,7 +131,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback,GoogleM
                     Log.i("마커이름", result.getJSONObject(i).getString("name"));
                     LatLng sydney1 = new LatLng(37.49, 127);
                     mMap.addMarker(new MarkerOptions().position(sydney1).title("addMarker" + i));
-                    mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng( location.getLatitude(), location.getLongitude()),15));
                 }
             }catch(Exception e){}
 
